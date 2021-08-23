@@ -13,27 +13,27 @@ using std::endl;
 
 char suffix = 'A';
 
-const char *genId(const char *);  // function prototype
+const char* genId(const char*);  // function prototype
 
-int main()    
+int main()
 {
-   const char *newId1 = nullptr, *newId2 = nullptr;
-   newId1 = genId("Group");  // fn call will allocate memory 
-   newId2 = genId("Group");  // fn call will allocate memory 
-   cout << "New ids: " << newId1 << " " << newId2 << endl;
-   delete [] newId1;   // notice that we are deallocating in a different scope than we allocated.
-   delete [] newId2;   // this will give us motivation later to use a smart pointer for safety.
-                       // note: delete newId1; or delete newId2; would also be ok (primitive type)
+	const char* newId1 = nullptr, * newId2 = nullptr;
+	newId1 = genId("Group");  // fn call will allocate memory
+	newId2 = genId("Group");  // fn call will allocate memory
+	cout << "New ids: " << newId1 << " " << newId2 << endl;
+	delete[] newId1;   // notice that we are deallocating in a different scope than we allocated.
+	delete[] newId2;   // this will give us motivation later to use a smart pointer for safety.
+	// note: delete newId1; or delete newId2; would also be ok (primitive type)
 
-   return 0;
+	return 0;
 }
 
-const char *genId(const char *base)
+const char* genId(const char* base)
 {
-   char *temp = new char[strlen(base) + 2]; // One extra space for suffix plus null
-   strcpy(temp, base);
-   temp[strlen(base)] = suffix++;  // append suffix to base
-   temp[strlen(base) + 1] = '\0';  // add null character
-   return temp;   // temp will be up-cast to a const char * to be treated more 
-                  // restrictively than it was defined
+	char* temp = new char[strlen(base) + 2]; // One extra space for suffix plus null
+	strcpy(temp, base);
+	temp[strlen(base)] = suffix++;  // append suffix to base
+	temp[strlen(base) + 1] = '\0';  // add null character
+	return temp;   // temp will be up-cast to a const char * to be treated more
+	// restrictively than it was defined
 }

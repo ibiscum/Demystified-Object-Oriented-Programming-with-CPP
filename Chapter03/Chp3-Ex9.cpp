@@ -11,20 +11,20 @@ using std::endl;
 
 int main()
 {
-    void *unspecified = nullptr;  // the void * may point to any data type
-    int *x = nullptr;
+	void* unspecified = nullptr;  // the void * may point to any data type
+	int* x = nullptr;
 
-    unspecified = new int;  // the void * now points to an int
+	unspecified = new int;  // the void * now points to an int
 
-    // the void * must be vase to an int * before it is dereferenced
-    *(static_cast<int *>(unspecified)) = 89;
+	// the void * must be vase to an int * before it is dereferenced
+	*(static_cast<int*>(unspecified)) = 89;
 
-    // let x point to the memory which unspecified points to
-    x = static_cast<int *> (unspecified);
+	// let x point to the memory which unspecified points to
+	x = static_cast<int*> (unspecified);
 
-    cout << *x << " " << *(static_cast<int *>(unspecified)) << endl;
+	cout << *x << " " << *(static_cast<int*>(unspecified)) << endl;
 
-    delete static_cast<int *>(unspecified);
+	delete static_cast<int*>(unspecified);
 
-    return 0;
+	return 0;
 }

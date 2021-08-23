@@ -36,78 +36,78 @@ const int MAX = 5;
 class Student
 {
 public:
-    string firstName;
-    string lastName;
-    float gpa;
-    string course;
+	string firstName;
+	string lastName;
+	float gpa;
+	string course;
 };
 
 // function prototypes -- first two are artifacts from previous chapter's solution
 void Print(string, string, string, float = 4.0);
 void Print(string, float);
 void Print(Student);
-void Print(const Student *);
-void ReadData(Student *);
+void Print(const Student*);
+void ReadData(Student*);
 
 int main()
 {
-    Student *all[MAX] = {nullptr, nullptr, nullptr, nullptr, nullptr};
-    for (int i = 0; i < MAX; i++)
-    {
-        all[i] = new Student;
-        ReadData(all[i]);
-        if (i % 2)             // alternate every other Student to call one version of Print or the other
-            Print(all[i]);     // call Print(const Student *) version
-        else
-            Print(*(all[i]));  // call Print(Student) version
-    }
+	Student* all[MAX] = { nullptr, nullptr, nullptr, nullptr, nullptr };
+	for (int i = 0; i < MAX; i++)
+	{
+		all[i] = new Student;
+		ReadData(all[i]);
+		if (i % 2)             // alternate every other Student to call one version of Print or the other
+			Print(all[i]);     // call Print(const Student *) version
+		else
+			Print(*(all[i]));  // call Print(Student) version
+	}
 
-    void *all2[MAX] = {nullptr, nullptr, nullptr, nullptr, nullptr};
-    for (int i = 0; i < MAX; i++)
-    {
-        all2[i] = all[i];
-        Print((Student *) all2[i]);
-    }
+	void* all2[MAX] = { nullptr, nullptr, nullptr, nullptr, nullptr };
+	for (int i = 0; i < MAX; i++)
+	{
+		all2[i] = all[i];
+		Print((Student*)all2[i]);
+	}
 
-    // remember to release memory, but just once!
-    // we have two pointers to each instance; do not delete the same memory through both sets of pointers! 
-    for (int i = 0; i < MAX; i++)
-        delete all[i];  
+	// remember to release memory, but just once!
+	// we have two pointers to each instance; do not delete the same memory through both sets of pointers!
+	for (int i = 0; i < MAX; i++)
+		delete all[i];
 
-    return 0;
+	return 0;
 }
 
 void Print(string fn, string ln, string course, float gpa)
 {
-    cout << fn << " " << ln << " is taking " << course;
-    cout << " and has a gpa of " << std::setprecision(3) << gpa << endl;
+	cout << fn << " " << ln << " is taking " << course;
+	cout << " and has a gpa of " << std::setprecision(3) << gpa << endl;
 }
 
 void Print(string ln, float gpa)
 {
-    cout << ln << " has gpa of " << std::setprecision(3) << gpa << endl;
+	cout << ln << " has gpa of " << std::setprecision(3) << gpa << endl;
 }
 
 void Print(Student s)
 {
-    cout << "void Print(Student)" << endl;
-    cout << s.firstName << " " << s.lastName << " is taking " << s.course;
-    cout << " and has a gpa of " << std::setprecision(3) << s.gpa << endl;
+	cout << "void Print(Student)" << endl;
+	cout << s.firstName << " " << s.lastName << " is taking " << s.course;
+	cout << " and has a gpa of " << std::setprecision(3) << s.gpa << endl;
 }
 
-void Print(const Student *s)
+void Print(const Student* s)
 {
-    cout << "void Print(const Student *)" << endl;
-    cout << s->firstName << " " << s->lastName << " is taking " << s->course;
-    cout << " and has a gpa of " << std::setprecision(3) << s->gpa << endl;
+	cout << "void Print(const Student *)" << endl;
+	cout << s->firstName << " " << s->lastName << " is taking " << s->course;
+	cout << " and has a gpa of " << std::setprecision(3) << s->gpa << endl;
 }
 
-void ReadData(Student *s)
+void ReadData(Student* s)
 {
-    cout << "Please enter <firstname> <lastname>: ";
-    cin >> s->firstName >> s->lastName;
-    cout << "Please enter " << s->firstName << " " << s->lastName;
-    cout << "'s <gpa> and <course>: ";
-    cin >> s->gpa >> s->course;
+	cout << "Please enter <firstname> <lastname>: ";
+	cin >> s->firstName >> s->lastName;
+	cout << "Please enter " << s->firstName << " " << s->lastName;
+	cout << "'s <gpa> and <course>: ";
+	cin >> s->gpa >> s->course;
 }
 

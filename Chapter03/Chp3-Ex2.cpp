@@ -29,7 +29,7 @@ int main()
     for (int i = 0; i < numElements; i++)
     {
         intArray[i] = i;               // load each array with values 
-        collectionArray[i].x = i;      // using arrray notation []
+        collectionArray[i].x = i;      // using array notation []
         collectionArray[i].y = i + .5;
    
         // alternatively use pointer notation to print values
@@ -39,8 +39,8 @@ int main()
 
     // mark memory for deletion
     delete [] intArray;          // for an array of primitive types, delete intArray; is also ok 
-    delete [] collectionArray;   // the []'s on delete first call a 'cleanup' function on each element before reclaiming
-                                 // the heap memory (useful for user defined types)-- more on that with Chapter 5
+    delete [] collectionArray;   // the []'s on delete first calls a 'cleanup' function on each element before reclaiming
+                                 // the heap memory (useful for user defined types) -- more on that with Chapter 5
 
     return 0;
 }
