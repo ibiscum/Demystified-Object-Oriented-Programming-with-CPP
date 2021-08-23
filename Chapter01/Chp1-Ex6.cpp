@@ -8,17 +8,16 @@ using std::endl;
 
 int main()
 {
-    for (int i = 0; i < 10; i++)    // Notice our preferred declaration of i within the loop construct
-    {
-        cout << i << endl;
+	for (int i = 0; i < 10; i++)    // Notice our preferred declaration of i within the loop construct
+	{
+		cout << i << endl;
 
-        for (int j = 0; j < 10; j++)
-            cout << j << endl;
+		for (int j = 0; j < 10; j++)
+			cout << j << endl;
 
-        cout << "\n";
-    }
+		cout << "\n";
+	}
 
-	
-    return 0;
+	return 0;
 }
 

@@ -26,10 +26,10 @@ using std::string;
 class Student
 {
 public:
-    string firstName;
-    string lastName;
-    float gpa;
-    string course;
+	string firstName;
+	string lastName;
+	float gpa;
+	string course;
 };
 
 void Print(string, string, string, float = 4.0);
@@ -38,35 +38,35 @@ void Print(Student);
 
 int main()
 {
-    Student s1;
-	
-    cout << "Please enter <firstname> <lastname>: ";
-    cin >> s1.firstName >> s1.lastName;
-    cout << "Please enter " << s1.firstName << " " << s1.lastName;
-    cout << "'s <gpa> and <course>: ";
-    cin >> s1.gpa >> s1.course;
+	Student s1;
 
-    Print(s1.firstName, s1.lastName, s1.course, s1.gpa);
-    Print(s1.firstName, s1.lastName, s1.course);	// use default gpa
-    Print(s1.lastName, s1.gpa);	// use overloaded fn.
+	cout << "Please enter <firstname> <lastname>: ";
+	cin >> s1.firstName >> s1.lastName;
+	cout << "Please enter " << s1.firstName << " " << s1.lastName;
+	cout << "'s <gpa> and <course>: ";
+	cin >> s1.gpa >> s1.course;
 
-    return 0;
+	Print(s1.firstName, s1.lastName, s1.course, s1.gpa);
+	Print(s1.firstName, s1.lastName, s1.course);    // use default gpa
+	Print(s1.lastName, s1.gpa);    // use overloaded fn.
+
+	return 0;
 }
 
 void Print(string fn, string ln, string course, float gpa)
 {
-    cout << fn << " " << ln << " is taking " << course;
-    cout << " and has a gpa of " << std::setprecision(3) << gpa << endl;
+	cout << fn << " " << ln << " is taking " << course;
+	cout << " and has a gpa of " << std::setprecision(3) << gpa << endl;
 }
 
 void Print(string ln, float gpa)
 {
-    cout << ln << " has gpa of " << std::setprecision(3) << gpa << endl;
+	cout << ln << " has gpa of " << std::setprecision(3) << gpa << endl;
 }
 
 void Print(Student s)
 {
-    cout << s.firstName << " " << s.lastName << " is taking " << s.course;
-    cout << " and has a gpa of " << std::setprecision(3) << s.gpa << endl;
+	cout << s.firstName << " " << s.lastName << " is taking " << s.course;
+	cout << " and has a gpa of " << std::setprecision(3) << s.gpa << endl;
 }
 

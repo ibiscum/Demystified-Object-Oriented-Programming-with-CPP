@@ -3,6 +3,8 @@ project(Demystified_Object_Oriented_Programming_with_CPP_ch01)
 
 set(CMAKE_CXX_STANDARD 17)
 
+add_executable(Chp1-Q3 Assessments/Chp1-Q3.cpp)
+
 add_executable(Chp1-Ex1 Chp1-Ex1.cpp)
 add_executable(Chp1-Ex2 Chp1-Ex2.cpp)
 add_executable(Chp1-Ex3 Chp1-Ex3.cpp)

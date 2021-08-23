@@ -9,48 +9,8 @@ include_directories(Chapter20)
 include_directories(Chapter20/unique)
 
 add_subdirectory(Chapter01)
+add_subdirectory(Chapter02)
 
-#add_executable(Demystified_Object_Oriented_Programming_with_CPP
-#        Chapter01/Assessments/Chp1-Q3.cpp
-#        Chapter01/original/Chp1-Ex1.cpp
-#        Chapter01/original/Chp1-Ex10.cpp
-#        Chapter01/original/Chp1-Ex11.cpp
-#        Chapter01/original/Chp1-Ex2.cpp
-#        Chapter01/original/Chp1-Ex3.cpp
-#        Chapter01/original/Chp1-Ex4.cpp
-#        Chapter01/original/Chp1-Ex5.cpp
-#        Chapter01/original/Chp1-Ex6.cpp
-#        Chapter01/original/Chp1-Ex7.cpp
-#        Chapter01/original/Chp1-Ex8.cpp
-#        Chapter01/original/Chp1-Ex9.cpp
-#        Chapter01/Chp1-Ex1.cpp
-#        Chapter01/Chp1-Ex10.cpp
-#        Chapter01/Chp1-Ex11.cpp
-#        Chapter01/Chp1-Ex2.cpp
-#        Chapter01/Chp1-Ex3.cpp
-#        Chapter01/Chp1-Ex4.cpp
-#        Chapter01/Chp1-Ex5.cpp
-#        Chapter01/Chp1-Ex6.cpp
-#        Chapter01/Chp1-Ex7.cpp
-#        Chapter01/Chp1-Ex8.cpp
-#        Chapter01/Chp1-Ex9.cpp
-#        Chapter02/Assessments/Chp2-Q2.cpp
-#        Chapter02/original/Chp2-Ex1.cpp
-#        Chapter02/original/Chp2-Ex2.cpp
-#        Chapter02/original/Chp2-Ex3.cpp
-#        Chapter02/original/Chp2-Ex4.cpp
-#        Chapter02/original/Chp2-Ex5.cpp
-#        Chapter02/original/Chp2-Ex6.cpp
-#        Chapter02/original/Chp2-Ex7.cpp
-#        Chapter02/original/Chp2-Ex8.cpp
-#        Chapter02/Chp2-Ex1.cpp
-#        Chapter02/Chp2-Ex2.cpp
-#        Chapter02/Chp2-Ex3.cpp
-#        Chapter02/Chp2-Ex4.cpp
-#        Chapter02/Chp2-Ex5.cpp
-#        Chapter02/Chp2-Ex6.cpp
-#        Chapter02/Chp2-Ex7.cpp
-#        Chapter02/Chp2-Ex8.cpp
 #        Chapter03/Assessments/Chp3-Q1.cpp
 #        Chapter03/Assessments/Chp3-Q2.cpp
 #        Chapter03/original/Chp3-Ex1.cpp

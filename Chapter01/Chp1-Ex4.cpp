@@ -8,23 +8,22 @@ using std::endl;
 
 int main()
 {
-    int i = 0;
-    
-    while (i < 10)
-    {
-        cout << i << endl;
-        i++;
-    }
+	int i = 0;
 
-    i = 0;
+	while (i < 10)
+	{
+		cout << i << endl;
+		i++;
+	}
 
-    do
-    {
-        cout << i << endl;
-        i++;
-    } while (i < 10);
+	i = 0;
 
-	
-    return 0;
+	do
+	{
+		cout << i << endl;
+		i++;
+	} while (i < 10);
+
+	return 0;
 }
 

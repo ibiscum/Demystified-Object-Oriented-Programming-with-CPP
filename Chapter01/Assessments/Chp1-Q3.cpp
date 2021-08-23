@@ -17,31 +17,31 @@ using std::string;
 class Book
 {
 public:
-    string title;
-    string author;
-    int numPages;
+	string title;
+	string author;
+	int numPages{};
 };
 
 int main()
 {
-    Book b1;
-    cout << "Please enter book title <one word>: ";
-    cin >> b1.title;
-    cout << "Please enter book author <lastname>: ";
-    cin >> b1.author;
-    cout << "Please enter book number of pages: ";
-    cin >> b1.numPages;
-    cout << b1.title << " with author: " << b1.author << " with page count: " << b1.numPages << endl;
+	Book b1;
+	cout << "Please enter book title <one word>: ";
+	cin >> b1.title;
+	cout << "Please enter book author <lastname>: ";
+	cin >> b1.author;
+	cout << "Please enter book number of pages: ";
+	cin >> b1.numPages;
+	cout << b1.title << " with author: " << b1.author << " with page count: " << b1.numPages << endl;
 
-    Book b2;
-    cout << "Please enter book title <one word>: ";
-    cin >> b2.title;
-    cout << "Please enter book author <lastname>: ";
-    cin >> b2.author;
-    cout << "Please enter book number of pages: ";
-    cin >> b2.numPages;
-    cout << b2.title << " with author: " << b2.author << " with page count: " << b2.numPages << endl;
-    return 0;
+	Book b2;
+	cout << "Please enter book title <one word>: ";
+	cin >> b2.title;
+	cout << "Please enter book author <lastname>: ";
+	cin >> b2.author;
+	cout << "Please enter book number of pages: ";
+	cin >> b2.numPages;
+	cout << b2.title << " with author: " << b2.author << " with page count: " << b2.numPages << endl;
+	return 0;
 }
 
 
