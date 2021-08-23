@@ -17,7 +17,7 @@ int main()
    // and may never be assigned another object to reference.
    // The reference and the referenced object must be the same type. 
    int &refInt1 = x;  // reference to an integer
-   int &refInt2 = *p; // also a reference to an integer
+   int &refInt2 = *p; // also, a reference to an integer
 
    cout << x << " " << *p << " " << refInt1 << " " << refInt2 << endl;
 

@@ -10,7 +10,7 @@ int main()
 {
     int i;   // though we'll prefer to declare i within the loop to limit its scope to the loop only 
              // (and will do so ever after), this example is paired with the book to discuss the scope of 
-             // i when it is declared outside of the loop as a cautionary warning. 
+             // i when it is declared outside the loop as a cautionary warning.
              // It is compared to j's scope below. 
     
     for (i = 0; i < 10; i++)

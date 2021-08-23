@@ -54,7 +54,7 @@ public:
 
 // Notice that the base class initialization list is ignored
 // if LifeForm actually is a shared virtual base class.
-// Most often the default construcor will instead be called for LifeForm.
+// Most often the default constructor will instead be called for LifeForm.
 // The remainder of the member initialization list will be used as expected.
 Horse::Horse(const string &n) : LifeForm(35), name("")
 {
@@ -111,7 +111,7 @@ public:
 
 // Notice that the base class initialization list is ignored
 // if LifeForm actually is a shared virtual base class.
-// Most often the default construcor will instead be called for LifeForm.
+// Most often the default constructor will instead be called for LifeForm.
 // The remainder of the member initialization list will be utilized, as expected.
 Person::Person() : LifeForm(80), firstName(""), lastName(""), middleInitial('\0'), title("")
 {

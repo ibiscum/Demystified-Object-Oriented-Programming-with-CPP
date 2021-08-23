@@ -1,5 +1,5 @@
 // (c) Dorothy R. Kirk. All Rights Reserved.
-// Purpose: To illustrate an alternate implmenentation of the Factory Method Pattern
+// Purpose: To illustrate an alternate implementation of the Factory Method Pattern
 // Implemented with the Factory Method in an Object Factory Class. 
 // Here, the Product of the Factory Method is Student. 
 // Concrete Products are GraduateStudent, UnderGraduateStudent, NonDegreeStudent
@@ -200,7 +200,7 @@ public:
     virtual ~GradStudent() { delete degree; } // destructor
     void EarnPhD();  
     virtual const char *IsA() override { return "GradStudent"; }
-    virtual void Graduate(); 
+    virtual void Graduate() override;
 };
 
 // Alternate constructor member function definition
@@ -247,7 +247,7 @@ public:
     UnderGradStudent(const UnderGradStudent &);  // copy constructor
     virtual ~UnderGradStudent() { delete degree; } // destructor
     virtual const char *IsA() override { return "UnderGradStudent"; }
-    virtual void Graduate(); 
+    virtual void Graduate() override;
 };
 
 // Alternate constructor member function definition
@@ -286,7 +286,7 @@ public:
     NonDegreeStudent(const NonDegreeStudent &);  // copy constructor
     virtual ~NonDegreeStudent() { } // destructor
     virtual const char *IsA() override { return "NonDegreeStudent"; }
-    virtual void Graduate(); 
+    virtual void Graduate() override;
 };
 
 NonDegreeStudent::NonDegreeStudent() 

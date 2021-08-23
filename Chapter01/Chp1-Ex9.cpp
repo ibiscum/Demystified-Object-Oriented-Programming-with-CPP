@@ -1,5 +1,5 @@
 // (c) Dorothy R. Kirk. All Rights Reserved.
-// Purpose: Review simple user-defined type: class (in simplist form)
+// Purpose: Review simple user-defined type: class (in the simplest form)
 
 #include <iostream>
 
@@ -11,8 +11,8 @@ class Student
 {
 public:
     string name;
-    float semesterGrades[5];
-    float gpa;
+    float semesterGrades[5]{};
+    float gpa{};
 };
 
 int main()

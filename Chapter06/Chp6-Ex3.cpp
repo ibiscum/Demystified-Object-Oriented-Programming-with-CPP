@@ -107,7 +107,7 @@ public:
    // Stack() = default;  // will call LinkList() default ctor
    // ~Stack() = default; 
 
-   // Here, we specify the pubilc interface which Stack instances may utilize.
+   // Here, we specify the public interface which Stack instances may utilize.
    // With private inheritance, the protected and public members inherited 
    // from LinkList act as though they were defined by Stack as private
    // (i.e. and are now ONLY accessible through the scope of Stack).   

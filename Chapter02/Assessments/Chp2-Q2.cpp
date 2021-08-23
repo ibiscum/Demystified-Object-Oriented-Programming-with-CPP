@@ -12,7 +12,7 @@
 // in each argument explicitly, and once using the default gpa.
 // c. Now, overload the print function with one which either prints out selected data (i.e. last name and gpa) or 
 // with a version of this function which takes a Student as an argument (but not a pointer or reference to a 
-// Student – we’ll do that later). Remember to protype this function.
+// Student – we’ll do that later). Remember to prototype this function.
 // d. Use iostreams for I/O.
 
 #include <iomanip>

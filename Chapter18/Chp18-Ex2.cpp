@@ -119,7 +119,7 @@ void Person::Print()
 
 
 // Adapter Class -- an association to Adaptee.
-// Humanoid is primarily an Adapter class, however, is is secondarily a Target class, as derived class instances of this type 
+// Humanoid is primarily an Adapter class, however, it is secondarily a Target class, as derived class instances of this type
 // can be generalized as Humanoid *'s and manipulated in the Client (application).
 class Humanoid
 {

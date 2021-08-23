@@ -104,7 +104,7 @@ class Student : public Person
 private: 
     float gpa;
     string currentCourse;
-    string studentId;      // decided to make studentId not const (a design decision that makes copy constuctor more productive, etc.) 
+    string studentId;      // decided to make studentId not const (a design decision that makes copy constructor more productive, etc.)
     static int numStudents;
 public:
     // member function prototypes
@@ -172,7 +172,7 @@ Student &Student::operator=(const Student &s)
 
       // remember to allocate any memory in destination for copies of source members
 
-      // copy data members from source to desination object
+      // copy data members from source to destination object
       gpa = s.gpa;
       currentCourse = s.currentCourse;
       studentId = s.studentId;

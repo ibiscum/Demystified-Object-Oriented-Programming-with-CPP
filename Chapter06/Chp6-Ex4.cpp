@@ -166,12 +166,12 @@ class Queue : protected LinkList
 private:
    // no new data members are necessary
 public:
-   // Constructor prototype shown below is not needed; we get default without prorotype (since there are no other ctors)
+   // Constructor prototype shown below is not needed; we get default without prototype (since there are no other ctors)
    // Shown in comments to show optional use of =default to get default ctor
    // Queue() = default;   // will call LinkList() constructor 
    // Destructor prototype is needed (per virtual keyword)
    virtual ~Queue() = default; // we'll discuss virtual in Chp 7 
-   // Here, we specify the pubilc interface which Queue instances may utilize.
+   // Here, we specify the public interface which Queue instances may utilize.
    // With protected inheritance, the protected and public members inherited 
    // from LinkList act as though they were defined by Queue as protected 
    // (i.e. and are now ONLY accessible through the scope of Queue and
@@ -198,14 +198,14 @@ class PriorityQueue : public Queue
 private:
    // no new data members are necessary
 public:
-   // Constructor prototype shown below is not needed; we get default without prorotype (since there are no other ctors)
+   // Constructor prototype shown below is not needed; we get default without prototype (since there are no other ctors)
    // Shown in comments to show optional use of =default to get default ctor
    // PriorityQueue() = default;   // will call Queue() default constructor 
    // Destructor prototype is needed (per virtual/override)
    ~PriorityQueue() override = default; // we'll discuss override in Chp 7
-   // Here, we specify the pubilc interface which PriorityQueue instances may utilize.
+   // Here, we specify the public interface which PriorityQueue instances may utilize.
    // Since we are inherited from Queue publicly, we inherit the public interface
-   // from Queue.  Since Queue is inherited protectedly from LinkList, the public
+   // from Queue.  Since Queue is inherited protected from LinkList, the public
    // interface from LinkList which is considered protected to Queue is also considered
    // protected to PriorityQueue, so these operations are available within the scope
    // of PriorityQueue.  Note that these operations would not be available within the

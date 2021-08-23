@@ -50,7 +50,7 @@ inline int Student::GetNumberStudents()
 
 inline void Student::SetCurrentCourse(const string &c)
 {
-    currentCourse = c;   // the implementation using the string is far simplier than with a char *
+    currentCourse = c;   // the implementation using the string is far simpler than with a char *
 }
 
 
@@ -73,7 +73,7 @@ Student::Student(const string &fn, const string &ln, char mi, float avg, const s
 
     // Because studentId is a const char *, we can not change value pointed to -- that is, directly! So we enlist temp for help.
     char *temp = new char [strlen(id) + 1];
-    strcpy (temp, id);  // studentId can't be an lvaue,  
+    strcpy (temp, id);  // studentId can't be an lvalue,
     studentId = temp;   // but temp can!
     numStudents++;
 }
@@ -85,7 +85,7 @@ Student::Student(const Student &s) : firstName(s.firstName), lastName(s.lastName
     delete studentId;  // release previously allocated studentId
     // remember to do a deep copy for any data members that are pointers
     char *temp = new char [strlen(s.studentId) + 1];
-    strcpy (temp, s.studentId); //studentId can't be an lvaue, 
+    strcpy (temp, s.studentId); //studentId can't be an lvalue,
     studentId = temp;           // but temp can!
     numStudents++;
 }

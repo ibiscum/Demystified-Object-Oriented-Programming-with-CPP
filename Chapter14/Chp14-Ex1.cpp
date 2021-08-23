@@ -104,7 +104,7 @@ class Student : public Person
 private: 
     float gpa;
     string currentCourse;
-    string studentId;      // decided to make studentId not const (a design decision that makes copy constuctor more productive, etc.) 
+    string studentId;      // decided to make studentId not const (a design decision that makes copy constructor more productive, etc.)
     static int numStudents;
 public:
     // member function prototypes
@@ -172,7 +172,7 @@ Student &Student::operator=(const Student &s)
 
       // remember to allocate any memory in destination for copies of source members
 
-      // copy data members from source to desination object
+      // copy data members from source to designation object
       gpa = s.gpa;
       currentCourse = s.currentCourse;
       studentId = s.studentId;
@@ -216,7 +216,7 @@ int main()
     studentBody.push_back(*s2);
     // Add three more Students to the list. These Students do not have local identifiers.
     // They are anonymous objects -- this is ok, they are directly added and copied in the container and 
-    // the local copies in main will be propertly popped off the stack once added to the list.
+    // the local copies in main will be properly popped off the stack once added to the list.
     studentBody.push_back(Student("Hana", "Sato", 'U', "Dr.", 3.8, "C++", "178PSU")); 
     studentBody.push_back(Student("Sara", "Kato", 'B', "Dr.", 3.9, "C++", "272PSU")); 
     studentBody.push_back(Student("Giselle", "LeBrun", 'R', "Ms.", 3.4, "C++", "299TU")); 

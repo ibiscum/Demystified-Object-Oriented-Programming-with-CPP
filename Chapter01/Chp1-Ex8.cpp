@@ -10,8 +10,8 @@ using std::string;
 struct Student
 {
     string name;
-    float semesterGrades[5];
-    float gpa;
+    float semesterGrades[5]{};
+    float gpa{};
 };
 
 int main()

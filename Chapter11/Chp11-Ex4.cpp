@@ -209,12 +209,12 @@ void Student::Graduate()
     // Assume this method is fully implemented. Here, I'm forcing a throw of a Course 
     // unless the bad gpa requirement is first triggered
 
-    if (gpa < 2.0)  // if Student doesn’t meet gpa requirements, throw bad gpa
+    if (gpa < 2.0)  // if Student does not meet gpa requirements, throw bad gpa
        throw gpa;
     // if Student is short credits, throw how many are missing
     // throw numCreditsMissing;  // assume this is an integer
     // or if Student is missing a course, construct and
-    // then throw the missing Course as a referenceable object
+    // then throw the missing Course as a referencable object
     throw *(new Course("Intro. to Programming", 1234)); 
     // or throw a string containing a diagnostic message
     // throw string(“Does not meet requirements”); 

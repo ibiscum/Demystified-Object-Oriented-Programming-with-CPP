@@ -37,7 +37,7 @@ int main()
     for (int i = 0; i < NUMROWS; i++)
         delete [] TwoDimArray[i];   // delete column quantities for each row
                                     // note: delete TwoDimArray[i]; would also work since this is of a standard type
-                                    // (the []'s ensure a clean up fn is called on each element -- useful for user defined types)
+                                    // (the []'s ensure a cleanup fn is called on each element -- useful for user defined types)
                                     // more on that when we talk about classes in detail in Chapter 5
 
     return 0;

@@ -34,7 +34,7 @@ Person::Person(const Person &p): firstName(p.firstName), lastName(p.lastName), m
 }
 
 // move copy constructor
-// left hand object overtakes the dynamically allocated data members of right hand object
+// left-hand object overtakes the dynamically allocated data members of right hand object
 // Then null out right hand objects pointers (we've relinquished those members). Non-pointer data is just copied.
 // Non-pointer data members (such as string or single char) are simply copied (string ensures a deep copy with =)
 Person::Person(Person &&p)
@@ -46,8 +46,8 @@ Person::Person(Person &&p)
     p.lastName = "";
     middleInitial = p.middleInitial;
     p.middleInitial = '\0';   // set source object member to null character
-    title = p.title;     // here, destinatation pointer takes over source pointer's memory
-    p.title = nullptr;         // null out source pointer since memory should not be shared (it now belong to destination object)
+    title = p.title;     // here, destination pointer takes over source pointer's memory
+    p.title = nullptr;         // null out source pointer since memory should not be shared (it now belongs to destination object)
 }
 
 Person::~Person()
@@ -136,7 +136,7 @@ Person &Person::operator=(Person &&p)
       p.lastName = "";
       middleInitial = p.middleInitial;
       p.middleInitial = '\0';
-      title = p.title;    // with ptr data member, this is a pointer assignemt - destination takes over source object's memory
+      title = p.title;    // with ptr data member, this is a pointer assignment - destination takes over source object's memory
       p.title = nullptr;
    }
    return *this;  // allow for cascaded assignments

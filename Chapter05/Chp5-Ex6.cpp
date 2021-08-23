@@ -1,5 +1,5 @@
 // (c) Dorothy R. Kirk. All Rights Reserved.
-// Purpose: To demonstrate a converstion constructor.
+// Purpose: To demonstrate a conversation constructor.
 
 #include <iostream>   
 #include <cstring>      // though we'll prefer std::string, we will need to illustrate one dynamically allocated

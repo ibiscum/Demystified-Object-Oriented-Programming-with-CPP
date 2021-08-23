@@ -85,7 +85,7 @@ Person &Person::operator=(const Person &p)
       firstName = p.firstName;
       lastName = p.lastName;
       middleInitial = p.middleInitial;
-      title = new char[strlen(p.title) + 1];  // memory allocatinon for ptr member
+      title = new char[strlen(p.title) + 1];  // memory allocation for ptr member
       strcpy(title, p.title);
    }
    return *this;  // allow for cascaded assignments

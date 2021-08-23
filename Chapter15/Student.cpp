@@ -36,8 +36,8 @@ Student::Student(const Student &s) : Person(s), gpa(s.gpa), currentCourse(s.curr
 }
 
 // move copy constructor
-// left hand object overtakes the dynamically allocated data memberse of right hand object
-// Then null out right hand objects pointer members (we've relinquished those members). Non-pointer data is just copied.
+// left-hand object overtakes the dynamically allocated data members of right hand object
+// Then null out right-hand objects' pointer members (we've relinquished those members). Non-pointer data is just copied.
 Student::Student(Student &&s) : Person(move(s))   // make sure we call base class Move copy constructor
 {
     cout << "Student move copy constructor" << endl;

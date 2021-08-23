@@ -13,7 +13,7 @@ using std::setprecision;
 
 int main()
 {
-    char name[20];   // caution; unitialized array of char
+    char name[20];   // caution; uninitialized array of char
     float gpa = 0.0;
     cout << "Please enter a name and a gpa: ";
     // Now, we won't overflow the input buffer of name (by using setw) 

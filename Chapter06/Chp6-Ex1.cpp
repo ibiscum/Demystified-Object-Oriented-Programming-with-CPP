@@ -1,5 +1,5 @@
 // (c) Dorothy R. Kirk. All Rights Reserved.
-// Purpose: To illustrate single inheritance, how the member initilazation list
+// Purpose: To illustrate single inheritance, how the member initialization list
 // is used to specify which base class constructor should be implicitly invoked,
 // and the significance of the protected access region. 
 
@@ -102,7 +102,7 @@ public:
    const string &GetCurrentCourse() const { return currentCourse; }
    const string &GetStudentId() const { return studentId; }
 
-   // prototype only, see inline function definiton below
+   // prototype only, see inline function definition below
    void SetCurrentCourse(const string &);
 
    static int GetNumberStudents(); // static member function
@@ -149,7 +149,7 @@ Student::Student(const string &fn, const string &ln, char mi, const string &t,
 // Copy constructor definition
 // Notice that the member initialization list is used to specify 
 // that the Person copy constructor should be utilized to copy the 
-// Person sub-object.  Without this secification, the default constructor
+// Person sub-object.  Without this specification, the default constructor
 // for Person would be invoked (which would be incorrect since part of
 // the copied Student object would be Nulled out).  Notice that
 // the input parameter ps is implicitly cast to a Person &
@@ -191,7 +191,7 @@ int main()
 {
    Student s1("Jo", "Li", 'U', "Ms.", 3.9, "C++", "178PSU"); 
 
-   // Public members of Person and Student are accessable outside the scope
+   // Public members of Person and Student are accessible outside the scope
    // of their respective classes....
 
    s1.Print();

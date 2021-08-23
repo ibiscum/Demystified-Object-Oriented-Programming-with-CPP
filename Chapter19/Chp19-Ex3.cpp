@@ -5,7 +5,7 @@
 // to the Singleton and, through association, forces its destruction. This happens when the static
 // SingletonDestroyer is released. Otherwise, we'd be counting on someone to remember to delete Singleton
 // which presents an issue -- many may point to the Singleton. Also, as the Singleton creates itself when 
-// needed, the Singleton can (thourgh its pairing w SingletonDestroy) be in charge of its own destruction
+// needed, the Singleton can (through its pairing w SingletonDestroy) be in charge of its own destruction
 // Nonetheless, we will add checks for single destruction in case a Client deletes our Singleton directly.
 // NOTE: In this version, main() explicitly deletes the Singleton to demonstrate that the SingletonDestructor 
 //       can handle that case as well!
@@ -35,7 +35,7 @@ public:
 
 // Singleton is designed to be mixed-in to a class desiring a Singleton using inheritance
 // Note: static Singleton *instance(); method won't be included in this class for inheritance-model implementation of Singleton.
-//       Target class will implement this method. If this was a stand-alone Singleton class, you'd include prototye here instead.
+//       Target class will implement this method. If this was a stand-alone Singleton class, you'd include prototype here instead.
 class Singleton
 {
 protected:
@@ -65,7 +65,7 @@ SingletonDestroyer::~SingletonDestroyer()
     }                          // This will have been done by Singleton if it has been individually destructed
 }
 
-// This method is not needed with inheritanc-model implementation of Singleton. 
+// This method is not needed with inheritance-model implementation of Singleton.
 // Shown to demonstrate what you'd need if you had a stand-alone class
 /*
 Singleton *Singleton::instance()

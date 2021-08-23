@@ -47,7 +47,7 @@ University::University(const string &n) : name(n), currentNumStudents(0)
 
 University::~University()
 {
-   // The students will delete themselves
+   // The students will delete themselves,
    // but we can null out our pointers to them
    for (int i = 0; i < MAX; i++)
       studentBody[i] = nullptr; 

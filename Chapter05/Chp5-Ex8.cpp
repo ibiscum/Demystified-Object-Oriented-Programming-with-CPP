@@ -34,7 +34,7 @@ public:
     float GetGpa() { return gpa; }
     const char *GetCurrentCourse() { return currentCourse; }   // we'll contrast this access fn to the other Get fns -- see book discussion
 
-    // prototype only, see inline function definiton below
+    // prototype only, see inline function definition below
     void SetCurrentCourse(const char *);
 };
 

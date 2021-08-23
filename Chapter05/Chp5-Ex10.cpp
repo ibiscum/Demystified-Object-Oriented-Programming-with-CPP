@@ -35,7 +35,7 @@ public:
 
 inline void Student::SetCurrentCourse(const string &c)
 {
-    currentCourse = c;   // the implementation using the string is far simplier
+    currentCourse = c;   // the implementation using the string is far simpler
 }
 
 

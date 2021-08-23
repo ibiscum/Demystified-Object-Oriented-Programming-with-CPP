@@ -210,7 +210,7 @@ void Student::Graduate()
 {
    // if something goes wrong, instantiate a StudentException,
    // pack it with relevant data during construction, and then
-   // throw the dereferenced pointer as a referenceable object
+   // throw the dereferenced pointer as a referencable object
    throw *(new StudentException("Missing Credits", 4));
 }
 

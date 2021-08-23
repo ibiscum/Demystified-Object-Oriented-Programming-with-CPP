@@ -121,7 +121,7 @@ void Person::Print()
 // Adapter Class -- uses private inheritance. Could have also used an association
 // Decided this should be an abstract class, so Converse is a pure virtual function (albeit with an optional definition!)
 // Derived classes will still need to override this pure virtual function if they'd like to be instantiable (concrete classes)
-// Humanoid is primarily an Adapter class, however, is is secondarily a Target class, as derived class instances of this type 
+// Humanoid is primarily an Adapter class, however, it is secondarily a Target class, as derived class instances of this type
 // can be generalized as Humanoid *'s and manipulated in the Client (application).
 class Humanoid: private Person
 {

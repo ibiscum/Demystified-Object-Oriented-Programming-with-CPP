@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.20)
+project(Demystified_Object_Oriented_Programming_with_CPP_ch01)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(Chp1-Ex1 Chp1-Ex1.cpp)
+add_executable(Chp1-Ex2 Chp1-Ex2.cpp)
+add_executable(Chp1-Ex3 Chp1-Ex3.cpp)
+add_executable(Chp1-Ex4 Chp1-Ex4.cpp)
+add_executable(Chp1-Ex5 Chp1-Ex5.cpp)
+add_executable(Chp1-Ex6 Chp1-Ex6.cpp)
+add_executable(Chp1-Ex7 Chp1-Ex7.cpp)
+add_executable(Chp1-Ex8 Chp1-Ex8.cpp)
+add_executable(Chp1-Ex9 Chp1-Ex9.cpp)
+add_executable(Chp1-Ex10 Chp1-Ex10.cpp)
+add_executable(Chp1-Ex11 Chp1-Ex11.cpp)
