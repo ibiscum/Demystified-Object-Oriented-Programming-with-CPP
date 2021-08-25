@@ -24,7 +24,7 @@ class Student
 public:
     string firstName;
     string lastName;
-    float gpa;
+    float gpa{};
     string course;
 };
 
@@ -37,8 +37,8 @@ void ReadData(Student &);
 int main()
 {
     Student s1, s2;
-    Student *s3 = new Student;
-    Student *s4 = new Student;
+    auto *s3 = new Student;
+    auto *s4 = new Student;
     ReadData(s1);   // reference version
     ReadData(&s2);  // pointer version 
     ReadData(s3);   // pointer version
@@ -85,4 +85,3 @@ void ReadData(Student &s)
     cout << "'s <gpa> and <course>: ";
     cin >> s.gpa >> s.course;
 }
-

@@ -10,7 +10,6 @@ int main()
 {
 	int x = 10;
 	int* p = new int;
-
 	*p = 20;
 
 	// References must be initialized to the object they are referencing

@@ -7,44 +7,48 @@
 using std::cout;    // preferred to: using namespace std;
 using std::flush;
 
-void AddOne(int &);
-void AddOne(int *);
-void Display(int &);
+void AddOne(int&);
+void AddOne(int*);
+void Display(int&);
 
 int main()
 {
-   int x = 10, *y = nullptr;
-   y = new int;
-   *y = 15;
-   Display(x);
-   Display(*y);
+	int x = 10;
+	int* y = nullptr;
+	y = new int;
+	*y = 15;
 
-   AddOne(x);   // calls reference version
-   AddOne(*y);
-   Display(x);
-   Display(*y);
+	Display(x);
+	Display(*y);
 
-   AddOne(&x);  // calls pointer version
-   AddOne(y);
-   Display(x);
-   Display(*y);
+	AddOne(x);   // calls reference version
+	AddOne(*y);
 
-   delete y;
+	Display(x);
+	Display(*y);
 
-   return 0;
+	AddOne(&x);  // calls pointer version
+	AddOne(y);
+
+	Display(x);
+	Display(*y);
+
+	delete y;
+
+	return 0;
 }
 
-void AddOne(int &arg)
+void AddOne(int& arg)
 {
-   arg++;
+	arg++;
 }
 
-void AddOne(int *arg)
+void AddOne(int* arg)
 {
-   (*arg)++;
+	(*arg)++;
 }
 
-void Display(int &arg)
+void Display(int& arg)
 {
-   cout << arg << " " << flush;
+	cout << arg << " " << flush;
 }

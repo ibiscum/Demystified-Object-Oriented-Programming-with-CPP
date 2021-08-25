@@ -5,14 +5,15 @@
 using std::cout;   // preferred to: using namespace std;
 using std::endl;
 
-int main()    
+int main()
 {
-   int x = 5;
-   const int &refInt = x;
-   cout << x << " " << refInt << endl;
-   // refInt = 6;  // illegal. We can't change value of refInt
-   x = 7;
-   cout << x << " " << refInt << endl;
+	int x = 5;
+	const int& refInt = x;
+	cout << x << " " << refInt << endl;
 
-   return 0;
+	// refInt = 6;  // illegal. We can't change value of refInt
+	x = 7;
+	cout << x << " " << refInt << endl;
+
+	return 0;
 }
