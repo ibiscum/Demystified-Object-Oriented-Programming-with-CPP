@@ -14,10 +14,10 @@ private:
    LinkListElement *next = nullptr;
 public:
    LinkListElement() = default; 
-   LinkListElement(Item *i) : data(i), next(nullptr) { }
+   explicit LinkListElement(Item *i) : data(i), next(nullptr) { }
    ~LinkListElement() { delete static_cast<Item *>(data); next = nullptr; }
    void *GetData() { return data; }
-   LinkListElement *GetNext() const { return next; }
+   [[nodiscard]] LinkListElement *GetNext() const { return next; }
    void SetNext(LinkListElement *e) { next = e; }
 };
 
@@ -29,13 +29,13 @@ private:
    LinkListElement *current = nullptr;
 public:
    LinkList() = default;
-   LinkList(LinkListElement *);
+   explicit LinkList(LinkListElement *);
    ~LinkList();
    void InsertAtFront(Item *);
    LinkListElement *RemoveAtFront();
    void DeleteAtFront();
-   int IsEmpty() const { return head == nullptr; } 
-   void Print();  
+	[[nodiscard]] virtual int IsEmpty() const { return head == nullptr; }
+	virtual void Print();
 };
 
 // If we chose to write the default constructor ourselves (rather than use in-class initialization),
@@ -54,7 +54,7 @@ LinkList::LinkList(LinkListElement *element)
 
 void LinkList::InsertAtFront(Item *theItem)
 {
-   LinkListElement *newHead = new LinkListElement(theItem);
+   auto *newHead = new LinkListElement(theItem);
 
    newHead->SetNext(head);  // newHead->next = head;
    head = newHead;
@@ -92,8 +92,8 @@ void LinkList::Print()
 
 LinkList::~LinkList()
 {
-   while (!IsEmpty())
-      DeleteAtFront();
+//   while (!IsEmpty())
+//      DeleteAtFront();
 }
 
 class Stack : private LinkList
@@ -114,8 +114,8 @@ public:
    void Push(Item *i) { InsertAtFront(i); }
    Item *Pop(); 
    // It is necessary to redefine these operations--LinkList is a private base class
-   int IsEmpty() const { return LinkList::IsEmpty(); }  
-   void Print() { LinkList::Print(); }
+   [[nodiscard]] int IsEmpty() const override { return LinkList::IsEmpty(); }
+   void Print() override { LinkList::Print(); }
 };
 
 Item *Stack::Pop()

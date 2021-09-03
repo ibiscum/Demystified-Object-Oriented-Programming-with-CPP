@@ -14,10 +14,10 @@ private:
    LinkListElement *next = nullptr;
 public:
    LinkListElement() = default; 
-   LinkListElement(Item *i) : data(i), next(nullptr) { }
+   explicit LinkListElement(Item *i) : data(i), next(nullptr) { }
    ~LinkListElement() { delete static_cast<Item *>(data); next = nullptr; }
    void *GetData() { return data; }
-   LinkListElement *GetNext() const { return next; }
+   [[nodiscard]] LinkListElement *GetNext() const { return next; }
    void SetNext(LinkListElement *e) { next = e; }
 };
 
@@ -29,14 +29,14 @@ private:
    LinkListElement *current = nullptr;
 public:
    LinkList() = default;
-   LinkList(LinkListElement *);
+   explicit LinkList(LinkListElement *);
    ~LinkList();
 
    void InsertAtFront(Item *);
    LinkListElement *RemoveAtFront();
    void DeleteAtFront();
 
-   void InsertBeforeItem(Item *, Item *);
+   void InsertBeforeItem(Item *, const Item *);
    LinkListElement *RemoveSpecificItem(Item *);
    void DeleteSpecificItem(Item *);
 
@@ -44,8 +44,8 @@ public:
    LinkListElement *RemoveAtEnd();
    void DeleteAtEnd();
 
-   int IsEmpty() const { return head == nullptr; } 
-   void Print();  
+	virtual [[nodiscard]] int IsEmpty() const { return head == nullptr; }
+	virtual void Print();
 };
 
 // User supplied default constructor is not necessary due to in-class initialization. 
@@ -64,7 +64,7 @@ LinkList::LinkList(LinkListElement *element)
 
 void LinkList::InsertAtFront(Item *theItem)
 {
-   LinkListElement *newHead = new LinkListElement(theItem);
+   auto *newHead = new LinkListElement(theItem);
 
    newHead->SetNext(head);  // newHead->next = head;
    head = newHead;
@@ -85,7 +85,7 @@ void LinkList::DeleteAtFront()
    delete deallocate;    // destructor will delete data, set next to nullptr
 }
 
-void LinkList::InsertBeforeItem(Item *newItem, Item *existing)
+void LinkList::InsertBeforeItem(Item *newItem, const Item *existing)
 {
    LinkListElement *temp = nullptr, *toAdd = nullptr;
    // assumes item to insert before exists
@@ -157,8 +157,8 @@ void LinkList::Print()
 
 LinkList::~LinkList()
 {
-   while (!IsEmpty())
-      DeleteAtFront();
+//   while (!IsEmpty())
+//      DeleteAtFront();
 }
 
 class Queue : protected LinkList
@@ -179,8 +179,8 @@ public:
    void Enqueue(Item *i) { InsertAtEnd(i); }
    Item *Dequeue(); 
    // It is necessary to redefine these operations--LinkList is a protected base class
-   int IsEmpty() const { return LinkList::IsEmpty(); }
-   void Print() { LinkList::Print(); }
+   [[nodiscard]] int IsEmpty() const override { return LinkList::IsEmpty(); }
+   void Print() override { LinkList::Print(); }
 };
 
 Item *Queue::Dequeue()

@@ -14,10 +14,10 @@ private:
    LinkListElement *next = nullptr;
 public:
    LinkListElement() = default;   // yes, we do desire the default constructor interface
-   LinkListElement(Item *i) : data(i), next(nullptr) { }
+   explicit LinkListElement(Item *i) : data(i), next(nullptr) { }
    ~LinkListElement() { delete static_cast<Item *>(data); next = nullptr; }
    void *GetData() { return data; }
-   LinkListElement *GetNext() const { return next; }
+   [[nodiscard]] LinkListElement *GetNext() const { return next; }
    void SetNext(LinkListElement *e) { next = e; }
 };
 
@@ -29,12 +29,12 @@ private:
    LinkListElement *current = nullptr;
 public:
    LinkList() = default;
-   LinkList(LinkListElement *);
+   explicit LinkList(LinkListElement *);
    ~LinkList();
    void InsertAtFront(Item *);
    LinkListElement *RemoveAtFront();
    void DeleteAtFront();
-   int IsEmpty() const { return head == nullptr; } 
+   [[nodiscard]] int IsEmpty() const { return head == nullptr; }
    void Print();  
 };
 
@@ -54,7 +54,7 @@ LinkList::LinkList(LinkListElement *element)
 
 void LinkList::InsertAtFront(Item *theItem)
 {
-   LinkListElement *newHead = new LinkListElement(theItem);
+   auto *newHead = new LinkListElement(theItem);
 
    newHead->SetNext(head);  // newHead->next = head;
    head = newHead;
@@ -105,7 +105,7 @@ int main()
    Item *item2 = new Item(200);
 
    // create an element for the Linked List
-   LinkListElement *element1 = new LinkListElement(item1);
+   auto *element1 = new LinkListElement(item1);
 
    // create a linked list and initialize with one node (element)
    LinkList list1(element1);
